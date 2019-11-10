@@ -69,14 +69,15 @@ transformation xml des annonces.*
 
 **Plateforme de gestion de contenu** `Php`, `Css`, `Jquery`*
 
- *Réalisation d’une pour permettre à nos clents d’administrer leurs sites web.
- Réalisation des maquettes et intégration des sites web suivant le cahier des
- charges réalisé avec le client.*
+*Réalisation d’une pour permettre à nos clents d’administrer leurs sites web.
+Réalisation des maquettes et intégration des sites web suivant le cahier des
+charges réalisé avec le client.*
 
   - Développement et Intégration du moteur de sites;
   - Développement du backoffice client.
 
 ## 2005
+
 ** Stage en entreprise à compiègne** `Html`, `Css`
 
   - Adaptation à la norme xhtml des templates html4 des sites *&mdash;
