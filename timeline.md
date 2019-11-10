@@ -78,7 +78,7 @@ charges réalisé avec le client.*
 
 ## 2005
 
-** Stage en entreprise à compiègne** `Html`, `Css`
+**Stage en entreprise à compiègne** `Html`, `Css`
 
   - Adaptation à la norme xhtml des templates html4 des sites *&mdash;
     framework ezpublish* de l’entreprise.
