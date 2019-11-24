@@ -27,11 +27,12 @@ ___
     - Développement d’api pour des applications Angular
     - Gestion de flux annonces (immo et auto)
     - Développement et maintenance des plateformes de la société
+    - Développement de l'api pour la plateforme client Solocal
 
     ### Intégrateur
     - Librairie de composants angular.
     - Framework Sass
-    - Plateformes client, intranet et applications.
+    - Intégration des plateformes client, sites et applications de la société 
     - Plateforme client de gestion des annonces Solocal (immo et auto)
 
   - *Novembre 2005*
@@ -44,7 +45,7 @@ ___
 
     ### Graphiste
     - Conception de sites internet, d’applications ou de mail
-    - et réalisation d’objets pour le service marketing : plaquettes, Kakemono,
+    - Et réalisation d’objets pour le service marketing : plaquettes, Kakemono,
       ou packaging.
 
   - *Juillet à Octobre 2005*
