@@ -9,7 +9,7 @@ ___
 ## Compétences
 
 ### Langages & Frameworks
- - php, Laravel 4 et 5, MySql
+ - Php, Laravel 4 et 5, MySql
  - Angular, Typescript, Javascript, Sass
 
 ### Informatique
