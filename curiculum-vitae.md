@@ -23,17 +23,14 @@ ___
 
 ## Expériences
   - *2017 à aujourd’hui*
-    ### Dévelopeur
-    - Développement d’api pour des applications Angular
-    - Gestion de flux annonces (immo et auto)
-    - Développement et maintenance des plateformes de la société
-    - Développement de l'api pour la plateforme client Solocal
-
-    ### Intégrateur
-    - Librairie de composants angular.
-    - Framework Sass
-    - Intégration des plateformes client, sites et applications de la société 
-    - Plateforme client de gestion des annonces Solocal (immo et auto)
+  
+    | Dévelopeur | Intégrateur |
+    | --- | --- |
+    | - Développement d’api pour des applications Angular | - Librairie de composants angular. |
+    | - Développement et maintenance des plateformes de la société | - Framework Sass |
+    | - Gestion de flux annonces (immo et auto) | - Intégration des plateformes client, sites et applications de la société |
+    | - Développement de l'api pour la plateforme client Solocal | - Plateforme client de gestion des annonces Solocal (immo et auto) |
+    
 
   - *Novembre 2005*
     ### Dévelopeur
