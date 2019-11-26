@@ -47,10 +47,11 @@ ___
 
     **Intégrateur**
     - Intégration des sites, intranets, applications de la société.
+    - Intégration d’une plateforme de gestion de produits financier (Garanties, Credos import et export) pour la société  Finelia.
     - Intégration de sites pour les clients.
 
     **Dévelopeur**
-    - Conception d’un CMS pour nos clients (hôteliers et vétérinaires)
+    - Conception d’un CMS pour nos clients (hôteliers et vétérinaires).
 
     **Graphiste**
     - Conception de sites internet, d’applications ou de mail
