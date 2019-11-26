@@ -23,24 +23,36 @@ ___
 
 ## Expériences
   - *2017 à aujourd’hui*
+    **Société PREVISITE filiale du groupe La Boîte-immo**
   
-    | Dévelopeur | Intégrateur |
-    | --- | --- |
-    | - Développement d’api pour des applications Angular | - Librairie de composants angular. |
-    | - Développement et maintenance des plateformes de la société | - Framework Sass |
-    | - Gestion de flux annonces (immo et auto) | - Intégration des plateformes client, sites et applications de la société |
-    | - Développement de l'api pour la plateforme client Solocal | - Plateforme client de gestion des annonces Solocal (immo et auto) |
-    
+    **Dévelopeur**
+    - Développement des Api pour les applications Angular.
+    - Évolution et de la maintenance des plateformes de la société.
+    - Mise en place d’un système de classes pour de faciliter l’intégration de templates vidéos.
+    - Développement de l'api pour la plateforme client Solocal.
+    - Développement de scripts de gestion de flux annonces.
+
+    **Intégrateur**
+    - Intégration des plateformes client et sites de la société.
+    - Intégration d’applications pouvant être utilisée sur le logiciel de la
+      maison mère ou sur la plateforme client previsite plateforme *(Éditeur
+      vidéo, Éditeur de visite virtuelle)*
+    - Intégration d’une plateforme de gestion des annonces pour les clients de la
+      société Solocal *(Immo et Auto)*.
+    - Mise en place d’une Librairie de composants angular.
+    - Développement d’un framework Sass sous la forme d’un module Npm.
 
   - *Novembre 2005*
-    ### Dévelopeur
-    - Conception d’un CMS pour nos clients (hôteliers et vétérinaires)
+    **Société PREVISITE**
 
-    ### Intégrateur
+    **Intégrateur**
     - Intégration des sites, intranets, applications de la société.
     - Intégration de sites pour les clients.
 
-    ### Graphiste
+    **Dévelopeur**
+    - Conception d’un CMS pour nos clients (hôteliers et vétérinaires)
+
+    **Graphiste**
     - Conception de sites internet, d’applications ou de mail
     - Et réalisation d’objets pour le service marketing : plaquettes, Kakemono,
       ou packaging.
@@ -48,7 +60,8 @@ ___
   - *Juillet à Octobre 2005*
     ### Intégrateur
     **Société Inovagora**, Compiégne. *Stage de validation de formation*
-    - Migration au format Xhtml de template Html4.
+    - Mise au normes Xhtml de template Html4 pour optimiser les performance
+      d’affichage des sites de la société.
 
 ___
 
