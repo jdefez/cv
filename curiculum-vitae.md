@@ -54,7 +54,7 @@ ___
     - Conception d’un CMS pour nos clients (hôteliers et vétérinaires).
 
     **Graphiste**
-    - Conception de sites internet, d’applications ou de mail
+    - Conception de sites internet, d’applications ou de mail.
     - Et réalisation d’objets pour le service marketing : plaquettes, Kakemono,
       ou packaging.
 
