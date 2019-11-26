@@ -26,7 +26,7 @@ ___
     **Société PREVISITE filiale du groupe La Boîte-immo**
   
     **Dévelopeur**
-    - Développement des Api pour les applications Angular.
+    - Développement des Api pour les plateformes et applications Angular.
     - Évolution et de la maintenance des plateformes de la société.
     - Mise en place d’un système de classes pour faciliter l’intégration de templates vidéos.
     - Développement de l'api pour la plateforme client Solocal.
