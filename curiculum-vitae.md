@@ -47,7 +47,7 @@ ___
 
     **Intégrateur**
     - Intégration des sites, intranets, applications de la société.
-    - Intégration d’un logiciel gestion de produits financier (Garanties, Credos import et export) pour la société  Finelia.
+    - Intégration d’un logiciel de gestion de produits financiers (Garanties, Credos import et export) pour la société  Finelia.
     - Intégration de sites pour les clients.
 
     **Dévelopeur**
