@@ -28,7 +28,7 @@ ___
     **Dévelopeur**
     - Développement des Api pour les applications Angular.
     - Évolution et de la maintenance des plateformes de la société.
-    - Mise en place d’un système de classes pour de faciliter l’intégration de templates vidéos.
+    - Mise en place d’un système de classes pour faciliter l’intégration de templates vidéos.
     - Développement de l'api pour la plateforme client Solocal.
     - Développement de scripts de gestion de flux annonces.
 
