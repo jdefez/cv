@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "browser-sync start --server --files 'assets/styles/*.css, **/*.html'",
+    "serve": "browser-sync start --server --files 'sass/*scss, assets/styles/**/*.css, **/*.html' --browser 'firefox'",
     "watch": "npm-run-all -l -p sass:watch serve",
     "sass:watch": "node-sass -r sass -o assets/styles --watch",
     "sass:compile": "node-sass -r sass -o assets/styles --output-style compressed",
