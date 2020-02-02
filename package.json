@@ -1,0 +1,28 @@
+{
+  "name": "base",
+  "version": "1.0.0",
+  "description": "scss transform to prefixed and minifyed css",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "browser-sync start --server --files 'assets/styles/*.css, **/*.html'",
+    "watch": "npm-run-all -l -p sass:watch serve",
+    "sass:watch": "node-sass -r sass -o assets/styles --watch",
+    "sass:compile": "node-sass -r sass -o assets/styles --output-style compressed",
+    "css:prefix": "postcss --use autoprefixer -b 'last 5 versions' assets/styles/*.css -r",
+    "css:build": "npm-run sass:compile css:prefix"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^9.5.1",
+    "browser-sync": "^2.26.7",
+    "node-sass": "^4.13.1",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^6.1.2",
+    "sass-repository": "github:jdefez/sass-repository#master"
+  }
+}
