@@ -1,0 +1,52 @@
+// layout
+
+@mixin grid-layout()
+{
+  body {
+    display: grid;
+    max-width: 960px;
+    margin: 0 auto;
+    grid-template-columns: [c-start] 300px [c-first] 1fr [c-second] 2fr [c-thrid] 200px [c-end];
+    column-gap: calc(var(--whitespace) * 2);
+    row-gap: var(--whitespace);
+    grid-template-areas:
+      'header main main main'
+      'aside main main main';
+    padding: {
+      right: var(--whitespace);
+      left: var(--whitespace);
+    }
+  }
+
+  header { grid-area: header; }
+
+  main {
+    grid-area: main;
+
+    section {
+      grid-area: main;
+      display: grid;
+      grid-template-columns: 0.75fr 2.25fr 200px;
+      column-gap: var(--whitespace);
+      grid-row-gap: var(--whitespace);
+      grid-template-areas:
+        'date title title'
+        'description description tags';
+
+      time { grid-area: date; }
+
+      h3 { grid-area: title; }
+
+      .task {
+        grid-column: 1 / span 3;
+        display: grid;
+        grid-template-columns: subgrid;
+
+        p { grid-area: description; }
+
+        ul { grid-area: tags; }
+      }
+    }
+  }
+  aside { grid-area: aside; }
+}

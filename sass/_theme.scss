@@ -1,0 +1,18 @@
+// theme
+@mixin theme() {
+  main {
+    section + section {
+      border-top: 1px solid darkgray;
+      padding-top: var(--whitespace);
+    }
+  }
+
+  // header { }
+
+  aside {
+    section {
+      border-top: 1px solid darkgray;
+      padding-top: var(--whitespace);
+    }
+  }
+}
