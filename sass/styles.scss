@@ -1,5 +1,84 @@
+@use 'sass-repository/framework' as f with (
+  $breakpoints: (
+    sm :  576px,
+    md :  768px,
+    lg :  992px,
+    xl : 1200px,
+  ),
+  $colors : (
+    /// Colors are transpiled to custom properties named --color-variant,
+    ///   ex. --primary-base
+    primary : (
+      base  : #0066ff,
+      dark  : #0047b3,
+      light : #4d94ff,
+    ),
+    secondary : (
+      base  : #66ff00,
+      dark  : #47b300,
+      light : #94ff4d,
+    ),
+    accent : (
+      dark  : #b30047,
+      base  : #ff0066,
+      light : #ff4d94,
+    ),
+    text: (
+      base: #002f76,
+      light: #001f4e,
+      dark: #001f4e,
+    ),
+    'gray' : (
+      base   : #888888,
+      darker : #111111,
+      dark   : #333333,
+      light  : #eeeeee,
+    ),
+    notice : (
+      success : #1aaa55,
+      info    : #1f78d1,
+      warning : #fc9403,
+      danger  : #db3b21
+    ),
+    foreground : (
+      dark  : #000000,
+      base  : #333333,
+      light : #555555,
+    ),
+    background : (
+      dark  : #EEEEEE,
+      base  : #FFFFFF,
+      light : #DDDDDD,
+    ),
+  ),
+  $font-sizes: (
+    h1      : 2.8em,
+    h2      : 2.4em,
+    h3      : 2.2em,
+    h4      : 2em,
+    h5      : 1.2em,
+    leading : 1.2em,
+    copy    : 1em,
+    small   : 0.8em,
+    xsmall  : 0.6rem,
+  ),
+  $vars : (
+    whitespace          : 2rem,
+    field-height        : 2.5rem,
+    field-border-width  : 1px,
+    field-border-radius : 0.2rem,
+    btn-border-width    : 1px,
+    btn-border-radius   : 0.3rem,
+));
+@include f.init;
+
 @import 'layout';
 @import 'theme';
+
+@include f.responsive-font-size(
+  $min-size: 12, $min-width: 400,
+  $max-size: 16, $max-width: 800
+);
 
 :root {
   --whitespace: 1.6rem;
