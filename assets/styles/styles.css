@@ -192,7 +192,7 @@ textarea {
 :root {
   font: normal 10px sans-serif;
   box-sizing: border-box;
-  --whitespace: 2rem;
+  --whitespace: 1.6rem;
   --field-height: 2.5rem;
   --field-border-width: 1px;
   --field-border-radius: 0.2rem;
@@ -318,22 +318,22 @@ textarea {
 }
 
 .t-h1 {
-  font-size: 2.8em;
+  font-size: 1.8em;
 }
 .t-h2 {
-  font-size: 2.4em;
+  font-size: 1.6em;
 }
 .t-h3 {
-  font-size: 2.2em;
+  font-size: 1.4em;
 }
 .t-h4 {
-  font-size: 2em;
+  font-size: 1.2em;
 }
 .t-h5 {
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 .t-leading {
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 .t-copy {
   font-size: 1em;
@@ -724,10 +724,6 @@ textarea {
     font-size: 16px;
   }
 }
-:root {
-  --whitespace: 1.6rem;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -745,6 +741,8 @@ body {
   display: grid;
   max-width: 960px;
   margin: 0 auto;
+  padding-top: var(--whitespace);
+  padding-bottom: var(--whitespace);
   grid-template-columns: [c-start] 300px [c-first] 1fr [c-second] 2fr [c-thrid] 200px [c-end];
   grid-template-rows: auto 1fr;
   column-gap: calc(var(--whitespace) * 2);

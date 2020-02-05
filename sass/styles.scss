@@ -52,18 +52,18 @@
     ),
   ),
   $font-sizes: (
-    h1      : 2.8em,
-    h2      : 2.4em,
-    h3      : 2.2em,
-    h4      : 2em,
-    h5      : 1.2em,
-    leading : 1.2em,
+    h1      : 1.8em,
+    h2      : 1.6em,
+    h3      : 1.4em,
+    h4      : 1.2em,
+    h5      : 1.1em,
+    leading : 1.1em,
     copy    : 1em,
     small   : 0.8em,
     xsmall  : 0.6rem,
   ),
   $vars : (
-    whitespace          : 2rem,
+    whitespace          : 1.6rem,
     field-height        : 2.5rem,
     field-border-width  : 1px,
     field-border-radius : 0.2rem,
@@ -80,10 +80,6 @@
   $max-size: 16, $max-width: 800
 );
 
-:root {
-  --whitespace: 1.6rem;
-}
-
 * { box-sizing: border-box; }
 
 html { font: normal 10px/1.6 sans-serif; }
@@ -94,3 +90,15 @@ html, body {
 
 @include grid-layout;
 @include theme;
+
+// .whitespaced {
+//   * + * { margin-top: f.p(whitespace); }
+// 
+//   &-exclude {
+//     margin-top: 0;
+// 
+//     &-all {
+//       * + * { margin-top: 0; }
+//     }
+//   }
+// }

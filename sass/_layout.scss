@@ -6,16 +6,20 @@
     display: grid;
     max-width: 960px;
     margin: 0 auto;
+    padding: {
+      top: f.p(whitespace);
+      bottom: f.p(whitespace);
+    }
     grid-template-columns: [c-start] 300px [c-first] 1fr [c-second] 2fr [c-thrid] 200px [c-end];
     grid-template-rows: auto 1fr;
-    column-gap: calc(var(--whitespace) * 2);
-    row-gap: var(--whitespace);
+    column-gap: calc(#{f.p(whitespace)} * 2);
+    row-gap: f.p(whitespace);
     grid-template-areas:
       'header main main main'
       'aside main main main';
     padding: {
-      right: var(--whitespace);
-      left: var(--whitespace);
+      right: f.p(whitespace);
+      left: f.p(whitespace);
     }
   }
 
@@ -28,8 +32,8 @@
       grid-area: main;
       display: grid;
       grid-template-columns: 0.75fr 2.25fr 200px;
-      column-gap: var(--whitespace);
-      grid-row-gap: var(--whitespace);
+      column-gap: f.p(whitespace);
+      grid-row-gap: f.p(whitespace);
       grid-template-areas:
         'date title title'
         'description description tags';
