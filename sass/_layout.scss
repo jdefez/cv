@@ -7,6 +7,7 @@
     max-width: 960px;
     margin: 0 auto;
     grid-template-columns: [c-start] 300px [c-first] 1fr [c-second] 2fr [c-thrid] 200px [c-end];
+    grid-template-rows: auto 1fr;
     column-gap: calc(var(--whitespace) * 2);
     row-gap: var(--whitespace);
     grid-template-areas:
