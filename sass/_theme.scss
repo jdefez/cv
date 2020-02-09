@@ -1,18 +1,59 @@
-// theme
 @mixin theme() {
-  main {
-    section + section {
-      border-top: 1px solid darkgray;
-      padding-top: var(--whitespace);
+  body {
+    background-color: #FEFEFE; 
+    line-height: 1.6;
+  }
+
+  main, aside, body > header {
+    * + * {
+      margin-top: f.p(whitespace);
+
+      ul, li { margin-top: 0; }
     }
   }
 
-  // header { }
+  .t-h1, .t-h2 { font-weight: 600; }
+  .t-h2 { text-transform: uppercase; }
+
+  body > header {
+    background-color: f.p(tertiary-base);
+    .firstname {
+      color: initial;
+      display: block;
+      margin-top: 0;
+    }
+    .t-h1 { line-height: 1; }
+    .t-h2 {
+      @extend .t-leading;
+      color: initial;
+    }
+    abbr, .t-h1, .t-h2, .t-h3, .t-h4 { color: f.p(primary-base); }
+    abbr { text-decoration: none; }
+  }
+
+  main {
+    background-color: f.p(primary-light);
+    .t-h2 { color: f.p(tertiary-base); }
+    time {
+      @extend .t-oblique, .t-small;
+      color: f.p(primary-base);
+    }
+  }
+
+  article {
+    ul {
+      @extend .t-oblique, .t-small;
+      li {
+        display: inline;
+        font-weight: 100;
+      }
+    }
+  }
 
   aside {
-    section {
-      border-top: 1px solid darkgray;
-      padding-top: var(--whitespace);
-    }
+    color: white;
+    background-color: f.p(primary-base);
+    time, .t-h2 { color: f.p(tertiary-base); }
+    time, abbr, .diploma { font-weight: 800; }
   }
 }

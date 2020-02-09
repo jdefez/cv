@@ -8,34 +8,84 @@
 </head>
 <body>
   <header>
-  <h1 class="t-h1">
-    jean-françois DEFEZ
-  </h1>
-  <address>
-    45, Boulevard Lefebvre 75015 PARIS<br>
-    <abbr title="Téléphone">Tel.</abbr>: 06 32 12 50 24<br>
-    <abbr title="Adresse électronique">E-mail</abbr>: jdefez@gmail.com<br>
-  </address>
+    <h1 class="t-h1">
+      DEFEZ
+      <span class="firstname">
+        jean-françois
+      </span>
+    </h1>
+    <h2 class="t-h2">
+      Développeur web
+    </h2>
+    <address class="whitespaced-exclude-all">
+      45, Boulevard Lefebvre 75015 PARIS<br>
+      <abbr title="Téléphone">Tel.</abbr> 06 32 12 50 24<br>
+      <abbr title="Adresse électronique">E-mail</abbr> jdefez@gmail.com<br>
+    </address>
+    <h3 class="t-h2">
+      Compétences
+    </h3>
+    <h4 class="t-h4">
+      Languages & frameworks
+    </h4>
+    <ul>
+      <li>
+        Php
+      </li>
+      <li>
+        Laravel 4 et 5
+      </li>
+      <li>
+        Mysql
+      </li>
+      <li>
+        Angular 2
+      </li>
+      <li>
+        Typescript
+      </li>
+      <li>
+        Javascript
+      </li>
+      <li>
+        Sass
+      </li>
+      <li>
+        Npm
+      </li>
+    </ul>
+    <h4 class="t-h4">
+      Méthodes de travail
+    </h4>
+    <ul>
+      <li>
+        Travail en agilité
+      </li>
+      <li>
+        Versionning (Gitflow)
+      </li>
+    </ul>
+    <h4 class="t-h4">
+      Informatique
+    </h4>
+    <ul>
+      <li>
+        Programation orientée objet
+      </li>
+    </ul>
   </header>
   <main>
     <header>
       <h2 class="t-h2">Expériences</h2>
     </header>
-    <!--<section>
-      <time datetime="2019-12-20T00:00">Depuis décembre 2019</time>
-      <h3>
-        Previsite en tant que filiale intégrée de la société la boîte immo
-      </h3>
-      <div class="task">
-        <p>description</p>
-      </div>
-    </section>-->
     <section>
-      <time datetime="2015-03-13T00:00">Mars 2015</time>
-      <h3 class="t-h3">
-        Société PREVISITE filiale du groupe La Boîte-immo
-      </h3>
-      <div class="task">
+      <header>
+        <h3 class="t-h3">
+          Société PREVISITE filiale du groupe La Boîte-immo
+          <time datetime="2015-03-13T00:00">Mars 2015</time>
+        </h3>
+      </header>
+      <article>
         <p>
           Évolution et maintenance des plateformes de la société.
         </p>
@@ -44,15 +94,15 @@
           <li>Php</li>
           <li>Mysql</li>
         </ul>
-      </div>
-      <div class="task">
+      </article>
+      <article>
         <p>
           Développement des API des plateformes et applications Angular : la
           plateforme client my.previsite.com, application de création visites
           virtuelles et l’éditeur de vidéo.
         </p>
         <ul>
-          <li>Angular,</li>
+          <li>Angular 2,</li>
           <li>Laravel,</li>
           <li>
             Html5,
@@ -61,8 +111,8 @@
             Sass.
           </li>
         </ul>
-      </div>
-      <div class="task">
+      </article>
+      <article>
         <p>
           Mise en place d’un système de classe pour intégration des modèles vidéo
           au format xml et pour leur personnalisation par les clients via l’éditeur
@@ -71,41 +121,44 @@
         <ul>
           <li>Php</li>
         </ul>
-      </div>
-      <div class="task">
+      </article>
+      <article>
         <p>
           Développement de scripts de gestion de flux annonces.
         </p>
         <ul>
           <li>PHP</li>
         </ul>
-      </div>
-      <div class="task">
+      </article>
+      <article>
         <p>
           Développement des API de la plateforme client et de l’intranet Solocal.
         </p>
         <ul>
           <li>Laravel,</li>
-          <li>Angular.</li>
+          <li>Angular 2.</li>
         </ul>
-      </div>
-      <div class="task">
+      </article>
+      <article>
         <p>
           Dans l’optique de centraliser les modules réutilisés dans toutes les
           applications angular, mise en place d’une Librairie de composants angular
           et d’un framework Sass sous la forme d’un module Npm.
         </p>
         <ul>
-          <li>tag</li>
+          <li>Sass</li>
+          <li>Npm</li>
         </ul>
-      </div>
+      </article>
     </section>
     <section>
-      <time datetime="2005-11-01T00:00">Novembre 2005</time>
-      <h3 class="t-h3">
-        Société PREVISITE
-      </h3>
-      <div class="task">
+      <header>
+        <h3 class="t-h3">
+          Société PREVISITE
+          <time datetime="2005-11-01T00:00">Novembre 2005</time>
+        </h3>
+      </header>
+      <article>
         <p>
           Intégration des sites, intranets et applications de la société. Gestion
           de l’internationalisation incluant l’hébreux
@@ -117,10 +170,10 @@
           <li>RequireJs,</li>
           <li>Jquery.</li>
         </ul>
-      </div>
-      <div class="task">
+      </article>
+      <article>
         <p>
-          Logiciel Finelia de gestion de produits financiers (Credocs import et
+          Finelia Logiciel de gestion de produits financiers (Credocs import et
           export): Développement du système de notifications d’événements. Et
           Intégration du logiciel.
         </p>
@@ -131,8 +184,20 @@
           <li>Css,</li>
           <li>Jquery.</li>
         </ul>
-      </div>
-      <div class="task">
+      </article>
+      <article>
+        <p>
+        Novella Hotels [Todo: description]
+        </p>
+        <ul>
+          <li>Php,</li>
+          <li>Mysql,</li>
+          <li>Xhtml,</li>
+          <li>Css,</li>
+          <li>Jquery.</li>
+        </ul>
+      </article>
+      <article>
         <p>
           Conception d’un CMS pour nos clients (hôteliers et vétérinaires) et
           conception des maquettes et intégration des sites des utilisateurs de
@@ -145,21 +210,29 @@
           <li>Css,</li>
           <li>Jquery.</li>
         </ul>
-      </div>
-      <div class="task">
+      </article>
+      <article>
         <p>
           Conception de sites internet, d’applications ou de mail pour le service
-          marketing.  Et réalisation d’objets pour le service marketing :
-          Brochures, kakémonos, ou packaging.
+          marketing. Et réalisation d’objets Brochures, kakémonos, ou packaging.
         </p>
-      </div>
+        <ul>
+          <li>xHtml</li>
+          <li>css</li>
+          <li>Photoshop</li>
+          <li>Illustrato</li>
+          <li>Indesign</li>
+        </ul>
+      </article>
     </section>
     <section>
-      <time datetime="2005-07-01T00:00">Juillet 2005</time>
-      <h3 class="t-h3">
-        Société Inovagora à Compiègne
-      </h3>
-      <div class="task">
+      <header>
+        <h3 class="t-h3">
+          Société Inovagora à Compiègne
+          <time datetime="2005-07-01T00:00">Juillet 2005</time>
+        </h3>
+      </header>
+      <article>
         <p>
           Stage de validation de formation. Mise au normes Xhtml de template
           Html4 pour optimiser les performance d’affichage des sites de la
@@ -170,93 +243,35 @@
           <li>css</li>
           <li>javascript</li>
         </ul>
-      </div>
+      </article>
     </section>
   </main>
   <aside>
     <section>
-      <h3 class="t-h3">
-        Compétences
-      </h3>
-      <h4 class="t-h4">
-        Languages & frameworks
-      </h4>
-      <ul>
-        <li>
-          Php
-        </li>
-        <li>
-          Laravel 4 et 5
-        </li>
-        <li>
-          Mysql
-        </li>
-        <li>
-          Angular
-        </li>
-        <li>
-          Typescript
-        </li>
-        <li>
-          Javascript
-        </li>
-        <li>
-          Sass
-        </li>
-        <li>
-          Npm
-        </li>
-      </ul>
-      <h4 class="t-h4">
-        Méthodes de travail
-      </h4>
-      <ul>
-        <li>
-        Travail en agilité
-        </li>
-        <li>
-        Versionning (Gitflow)
-        </li>
-      </ul>
-      <h4 class="t-h4">
-        Informatique
-      </h4>
-      <ul>
-        <li>
-          Programation orientée objet
-        </li>
-      </ul>
-    </section>
-    <section>
-      <h3 class="t-h3">
+      <h2 class="t-h2">
         Formations
-      </h3>
-      <time datetime="2005-11-O1T00:00">
-        Novembre 2005
-      </time>
+      </h2>
       <p>
-      Infographiste Multimédia Diplôme du ministère du travail — bac + 2.
+      <time datetime="2005-11-O1T00:00">Novembre 2005</time>
+      <span class="diploma">Infographiste Multimédia</span>
+      Diplôme du ministère du travail&nbsp;
+      <span class="t-oblique t-medium">&mdash; <abbr title="Baccalauréat">BAC<abbr> + 2</span>.
       Centre de formation « Media Management ».
       </p>
-      <time datetime="1996-O6T00:00">
-        Juin 1996
-      </time>
       <p>
-      Licence d’Arts Plastiques, Université de Picardie: Histoire de l’art,
+      <time datetime="1996-O6T00:00">Juin 1996</time>
+      <span class="diploma">Licence d’Arts Plastiques</span>, Université de Picardie: Histoire de l’art,
       philosophie des arts, peinture, sculpture.
       </p>
-      <time datetime="1995-06-O1T00:00">
-        Juin 1995
-      </time>
       <p>
+      <time datetime="1995-06-O1T00:00">Juin 1995</time>
       <abbr title="Diplôme d'études universitaires générales">DEUG</abbr>
       d’Arts Plastiques, Université de Picardie, Amiens.
       </p>
-      <time datetime="1991-06-O1T00:00">
-        Juin 1991
-      </time>
       <p>
-      Baccalauréat Sciences Économiques et Sociales, Lycée Gay Lussac de Chauny.
+      <time datetime="1991-06-O1T00:00">Juin 1991</time>
+      <span class="diploma">Baccalauréat Sciences Économiques et
+        Sociales</span>, Lycée Gay Lussac de Chauny.
       </p>
     </section>
   </aside>

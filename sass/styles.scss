@@ -9,19 +9,23 @@
     /// Colors are transpiled to custom properties named --color-variant,
     ///   ex. --primary-base
     primary : (
-      base  : #0066ff,
-      dark  : #0047b3,
-      light : #4d94ff,
+      base  : #FF6C62,
+      //dark  : #0047b3,
+      light : #fbf5e9,
     ),
     secondary : (
-      base  : #66ff00,
-      dark  : #47b300,
-      light : #94ff4d,
+      base  : #6C62FF,
+      //dark  : #47b300,
+      //light : #94ff4d,
+    ),
+    tertiary: (
+      base: #F8D986,
+      //base: #ffbb62,
     ),
     accent : (
-      dark  : #b30047,
-      base  : #ff0066,
-      light : #ff4d94,
+      base  : #62FF6C,
+      //dark  : #ff0066,
+      //light : #ff4d94,
     ),
     text: (
       base: #002f76,
@@ -40,16 +44,6 @@
       warning : #fc9403,
       danger  : #db3b21
     ),
-    foreground : (
-      dark  : #000000,
-      base  : #333333,
-      light : #555555,
-    ),
-    background : (
-      dark  : #EEEEEE,
-      base  : #FFFFFF,
-      light : #DDDDDD,
-    ),
   ),
   $font-sizes: (
     h1      : 1.8em,
@@ -59,6 +53,7 @@
     h5      : 1.1em,
     leading : 1.1em,
     copy    : 1em,
+    medium  : 0.9em,
     small   : 0.8em,
     xsmall  : 0.6rem,
   ),
@@ -70,35 +65,38 @@
     btn-border-width    : 1px,
     btn-border-radius   : 0.3rem,
 ));
+
 @include f.init;
-
-@import 'layout';
-@import 'theme';
-
+@include f.text;
 @include f.responsive-font-size(
   $min-size: 12, $min-width: 400,
   $max-size: 16, $max-width: 800
 );
+@import 'layout';
+@import 'theme';
+
+@include grid-layout;
+@include theme;
 
 * { box-sizing: border-box; }
 
-html { font: normal 10px/1.6 sans-serif; }
+//html {
+  //font: normal 10px/2 sans-serif;
+//}
 html, body {
   margin: 0;
   padding: 0;
 }
 
-@include grid-layout;
-@include theme;
+.whitespaced {
+  * + * { margin-top: f.p(whitespace); }
 
-// .whitespaced {
-//   * + * { margin-top: f.p(whitespace); }
-// 
-//   &-exclude {
-//     margin-top: 0;
-// 
-//     &-all {
-//       * + * { margin-top: 0; }
-//     }
-//   }
-// }
+  &-exclude {
+    margin-top: 0;
+
+    &-all {
+      * + * { margin-top: 0; }
+    }
+  }
+}
+
