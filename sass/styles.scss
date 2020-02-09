@@ -10,8 +10,8 @@
     ///   ex. --primary-base
     primary : (
       base  : #FF6C62,
-      //dark  : #0047b3,
-      light : #fbf5e9,
+      dark  : #4E0500,
+      light : #FBF5E9,
     ),
     secondary : (
       base  : #6C62FF,
@@ -30,7 +30,7 @@
     text: (
       base: #002f76,
       light: #001f4e,
-      dark: #001f4e,
+      dark: #140100,
     ),
     'gray' : (
       base   : #888888,
@@ -80,9 +80,6 @@
 
 * { box-sizing: border-box; }
 
-//html {
-  //font: normal 10px/2 sans-serif;
-//}
 html, body {
   margin: 0;
   padding: 0;

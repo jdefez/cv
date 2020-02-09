@@ -1,6 +1,15 @@
 @mixin theme() {
+  @import url('https://fonts.googleapis.com/css2?family=Quicksand:ital,wght@0,300..700;1,300..700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:ital,wght@0,200..700;1,200..700&display=swap');
+  .t-h1, .t-h2, .t-h3, .t-h4, .t-h5 {
+    font-family: Oswald;
+    //font-variation-settings: 'wdth' 400, 'wght' 98;
+  }
+
   body {
+    color: f.p(primary-dark);
     background-color: #FEFEFE; 
+    font-family: Quicksand;
     line-height: 1.6;
   }
 
@@ -12,7 +21,6 @@
     }
   }
 
-  .t-h1, .t-h2 { font-weight: 600; }
   .t-h2 { text-transform: uppercase; }
 
   body > header {
@@ -41,6 +49,7 @@
   }
 
   article {
+    p { @extend .t-justify; }
     ul {
       @extend .t-oblique, .t-small;
       li {

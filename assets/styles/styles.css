@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:ital,wght@0,300..700;1,300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:ital,wght@0,200..700;1,200..700&display=swap");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -199,13 +201,14 @@ textarea {
   --btn-border-width: 1px;
   --btn-border-radius: 0.3rem;
   --primary-base: #FF6C62;
-  --primary-light: #fbf5e9;
+  --primary-dark: #4E0500;
+  --primary-light: #FBF5E9;
   --secondary-base: #6C62FF;
   --tertiary-base: #F8D986;
   --accent-base: #62FF6C;
   --text-base: #002f76;
   --text-light: #001f4e;
-  --text-dark: #001f4e;
+  --text-dark: #140100;
   --gray-base: #888888;
   --gray-darker: #111111;
   --gray-dark: #333333;
@@ -383,7 +386,7 @@ textarea {
 .t-center {
   text-align: center;
 }
-.t-justify {
+.t-justify, article p {
   text-align: justify;
   text-justify: distribute;
   hyphens: auto;
@@ -712,7 +715,7 @@ textarea {
 .t-center {
   text-align: center;
 }
-.t-justify {
+.t-justify, article p {
   text-align: justify;
   text-justify: distribute;
   hyphens: auto;
@@ -781,7 +784,7 @@ article {
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-template-areas: "description tags";
-  grid-column-gap: var(--whitespace);
+  grid-column-gap: calc(var(--whitespace) * 2);
 }
 article p {
   grid-area: description;
@@ -790,8 +793,14 @@ article ul {
   grid-area: tags;
 }
 
+.t-h1, .t-h2, .t-h3, .t-h4, .t-h5 {
+  font-family: Oswald;
+}
+
 body {
+  color: var(--primary-dark);
   background-color: #FEFEFE;
+  font-family: Quicksand;
   line-height: 1.6;
 }
 
@@ -800,10 +809,6 @@ main * + *, aside * + *, body > header * + * {
 }
 main * + * ul, main * + * li, aside * + * ul, aside * + * li, body > header * + * ul, body > header * + * li {
   margin-top: 0;
-}
-
-.t-h1, .t-h2 {
-  font-weight: 600;
 }
 
 .t-h2 {

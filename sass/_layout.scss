@@ -30,7 +30,7 @@
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-template-areas: 'description tags';
-    grid-column-gap: f.p(whitespace);
+    grid-column-gap: calc(#{f.p(whitespace)} * 2);
 
     p { grid-area: description; }
 
