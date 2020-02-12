@@ -751,6 +751,25 @@ textarea {
     font-size: 16px;
   }
 }
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.whitespaced * + * {
+  margin-top: var(--whitespace);
+}
+.whitespaced-exclude {
+  margin-top: 0;
+}
+.whitespaced-exclude-all * + * {
+  margin-top: 0;
+}
+
 body {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
@@ -795,6 +814,10 @@ article ul {
 
 .t-h1, .t-h2, .t-h3, .t-h4, .t-h5 {
   font-family: Oswald;
+}
+
+.names {
+  font-weight: 900 !important;
 }
 
 body {
@@ -860,25 +883,6 @@ aside time, aside .t-h2 {
 }
 aside time, aside abbr, aside .diploma {
   font-weight: 800;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-}
-
-.whitespaced * + * {
-  margin-top: var(--whitespace);
-}
-.whitespaced-exclude {
-  margin-top: 0;
-}
-.whitespaced-exclude-all * + * {
-  margin-top: 0;
 }
 
 /*# sourceMappingURL=styles.css.map */
