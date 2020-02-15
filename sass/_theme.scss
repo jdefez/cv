@@ -1,70 +1,91 @@
 @mixin theme() {
-  @import url('https://fonts.googleapis.com/css2?family=Quicksand:ital,wght@0,300..700;1,300..700&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Oswald:ital,wght@0,200..700;1,200..700&display=swap');
-  .t-h1, .t-h2, .t-h3, .t-h4, .t-h5 {
-    font-family: Oswald;
-    //font-variation-settings: 'wdth' 400, 'wght' 98;
-  }
-
-  .names { font-weight: 500; }
-
-  body {
-    color: f.p(primary-dark);
-    background-color: #FEFEFE;
-    font-family: Quicksand;
-    line-height: 1.6;
-  }
-
-  main, aside, body > header {
-    * + * {
-      margin-top: f.p(whitespace);
-
-      ul, li { margin-top: 0; }
+  [data-theme="minimal"] {
+    background-color: #FAFAFA;
+    color: #444;
+    font: {
+      family: ManropeGX, sans-serif;
+      weight: 200;
     }
-  }
 
-  .t-h2 { text-transform: uppercase; }
+    main, aside, & > header {
+      * + * {
+        margin-top: f.p(whitespace);
 
-  body > header {
-    background-color: f.p(tertiary-base);
-    .firstname {
-      color: initial;
-      display: block;
-      margin-top: 0;
+        ul, li { margin-top: 0; }
+      }
     }
-    .t-h1 { line-height: 1; }
-    .t-h2 {
-      @extend .t-leading;
-      color: initial;
-    }
-    abbr, .t-h1, .t-h2, .t-h3, .t-h4 { color: f.p(primary-base); }
-    abbr { text-decoration: none; }
-  }
 
-  main {
-    background-color: f.p(primary-light);
-    .t-h2 { color: f.p(tertiary-base); }
-    time {
-      @extend .t-oblique, .t-small;
-      color: f.p(primary-base);
-    }
-  }
-
-  article {
-    p { @extend .t-justify; }
-    ul {
-      @extend .t-oblique, .t-small;
-      li {
-        display: inline;
-        font-weight: 100;
+    .t-h1, .t-h2, .t-h3, .t-h4, .t-h5 {
+      font: {
+        family: ManropeGX, sans-serif;
+        weight: 600;
       }
     }
   }
 
-  aside {
-    color: white;
-    background-color: f.p(primary-base);
-    time, .t-h2 { color: f.p(tertiary-base); }
-    time, abbr, .diploma { font-weight: 800; }
+  [data-theme="theme1"] {
+    color: f.p(primary-dark);
+    background-color: f.p(tertiary-base);
+    font-family: Quicksand;
+    line-height: 1.6;
+
+    .t-h1, .t-h2, .t-h3, .t-h4, .t-h5 {
+      font-family: Oswald;
+    }
+
+    .names { font-weight: 500; }
+
+    main, aside, & > header {
+      * + * {
+        margin-top: f.p(whitespace);
+
+        ul, li { margin-top: 0; }
+      }
+    }
+
+    .t-h2 { text-transform: uppercase; }
+
+    & > header {
+      background-color: f.p(tertiary-base);
+      .firstname {
+        color: initial;
+        display: block;
+        margin-top: 0;
+      }
+      .t-h1 { line-height: 1; }
+      .t-h2 {
+        @extend .t-leading;
+        color: initial;
+      }
+      abbr, .t-h1, .t-h2, .t-h3, .t-h4 { color: f.p(primary-base); }
+      abbr { text-decoration: none; }
+    }
+
+    main {
+      background-color: f.p(primary-light);
+      .t-h2 { color: f.p(tertiary-base); }
+      time {
+        @extend .t-oblique, .t-small;
+        color: f.p(primary-base);
+      }
+    }
+
+    article {
+      p { @extend .t-justify; }
+      ul {
+        @extend .t-oblique, .t-small;
+        li {
+          display: inline;
+          font-weight: 100;
+        }
+      }
+    }
+
+    aside {
+      color: white;
+      background-color: f.p(primary-base);
+      time, .t-h2 { color: f.p(tertiary-base); }
+      time, abbr, .diploma { font-weight: 800; }
+    }
   }
 }
