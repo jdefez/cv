@@ -323,16 +323,16 @@ textarea {
 .t-h5 {
   font-size: 1.1em;
 }
-.t-leading, [data-theme=theme1] > header .t-h2 {
+.t-leading {
   font-size: 1.1em;
 }
 .t-copy {
   font-size: 1em;
 }
-.t-medium {
+.t-medium, [data-theme=minimal] {
   font-size: 0.9em;
 }
-.t-small, [data-theme=theme1] article ul, [data-theme=theme1] main time {
+.t-small, [data-theme=minimal] article ul {
   font-size: 0.8em;
 }
 .t-xsmall {
@@ -378,18 +378,18 @@ textarea {
 .t-left {
   text-align: left;
 }
-.t-right {
+.t-right, [data-theme=minimal] article ul {
   text-align: right;
 }
 .t-center {
   text-align: center;
 }
-.t-justify, [data-theme=theme1] article p {
+.t-justify, [data-theme=minimal] article p {
   text-align: justify;
   text-justify: distribute;
   hyphens: auto;
 }
-.t-italic, .t-oblique, [data-theme=theme1] article ul, [data-theme=theme1] main time {
+.t-italic, .t-oblique, [data-theme=minimal] article ul, time {
   font-style: italic;
 }
 .t-ellipsis {
@@ -707,18 +707,18 @@ textarea {
 .t-left {
   text-align: left;
 }
-.t-right {
+.t-right, [data-theme=minimal] article ul {
   text-align: right;
 }
 .t-center {
   text-align: center;
 }
-.t-justify, [data-theme=theme1] article p {
+.t-justify, [data-theme=minimal] article p {
   text-align: justify;
   text-justify: distribute;
   hyphens: auto;
 }
-.t-italic, .t-oblique, [data-theme=theme1] article ul, [data-theme=theme1] main time {
+.t-italic, .t-oblique, [data-theme=minimal] article ul, time {
   font-style: italic;
 }
 .t-ellipsis {
@@ -768,6 +768,10 @@ html, body {
   margin-top: 0;
 }
 
+time {
+  display: block;
+}
+
 body {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
@@ -782,35 +786,47 @@ body > header, main, aside {
 header {
   grid-area: header;
 }
+header .firstname, header abbr {
+  margin-top: 0;
+}
+header .firstname {
+  display: block;
+}
 
 main {
   grid-area: main;
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-template-areas: "header sections";
-  background-color: pink;
+  grid-template-areas: "sections header";
+  column-gap: var(--whitespace);
 }
 main > header {
-  grid-area: header;
+  grid-column: header;
   writing-mode: vertical-rl;
 }
 main section {
-  grid-area: sections;
-  background-color: olive;
+  grid-column: sections;
+}
+main section:first-of-type {
+  margin-top: 0;
 }
 
 aside {
   grid-area: aside;
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-template-areas: "header section";
+  grid-template-areas: "sections header";
+  column-gap: var(--whitespace);
 }
 aside header {
   grid-column: header;
   writing-mode: vertical-rl;
 }
 aside section {
-  grid-column: section;
+  grid-column: sections;
+}
+aside section:first-of-type {
+  margin-top: 0;
 }
 
 article {
@@ -833,8 +849,15 @@ article ul {
 [data-theme=minimal] {
   background-color: #FAFAFA;
   color: #444;
+  line-height: 1.6;
   font-family: ManropeGX, sans-serif;
   font-weight: 200;
+}
+[data-theme=minimal] .t-h1, [data-theme=minimal] .t-h2, [data-theme=minimal] .t-h3, [data-theme=minimal] abbr {
+  font-weight: 600;
+}
+[data-theme=minimal] .t-h4, [data-theme=minimal] .t-h5 {
+  font-weight: 350;
 }
 [data-theme=minimal] main * + *, [data-theme=minimal] aside * + *, [data-theme=minimal] > header * + * {
   margin-top: var(--whitespace);
@@ -842,74 +865,33 @@ article ul {
 [data-theme=minimal] main * + * ul, [data-theme=minimal] main * + * li, [data-theme=minimal] aside * + * ul, [data-theme=minimal] aside * + * li, [data-theme=minimal] > header * + * ul, [data-theme=minimal] > header * + * li {
   margin-top: 0;
 }
-[data-theme=minimal] .t-h1, [data-theme=minimal] .t-h2, [data-theme=minimal] .t-h3, [data-theme=minimal] .t-h4, [data-theme=minimal] .t-h5 {
-  font-family: ManropeGX, sans-serif;
-  font-weight: 600;
-}
-
-[data-theme=theme1] {
-  color: var(--primary-dark);
-  background-color: var(--tertiary-base);
-  font-family: Quicksand;
-  line-height: 1.6;
-}
-[data-theme=theme1] .t-h1, [data-theme=theme1] .t-h2, [data-theme=theme1] .t-h3, [data-theme=theme1] .t-h4, [data-theme=theme1] .t-h5 {
-  font-family: Oswald;
-}
-[data-theme=theme1] .names {
-  font-weight: 500;
-}
-[data-theme=theme1] main * + *, [data-theme=theme1] aside * + *, [data-theme=theme1] > header * + * {
-  margin-top: var(--whitespace);
-}
-[data-theme=theme1] main * + * ul, [data-theme=theme1] main * + * li, [data-theme=theme1] aside * + * ul, [data-theme=theme1] aside * + * li, [data-theme=theme1] > header * + * ul, [data-theme=theme1] > header * + * li {
-  margin-top: 0;
-}
-[data-theme=theme1] .t-h2 {
-  text-transform: uppercase;
-}
-[data-theme=theme1] > header {
-  background-color: var(--tertiary-base);
-}
-[data-theme=theme1] > header .firstname {
-  color: initial;
-  display: block;
-  margin-top: 0;
-}
-[data-theme=theme1] > header .t-h1 {
+[data-theme=minimal] > header .t-h1 {
   line-height: 1;
 }
-[data-theme=theme1] > header .t-h2 {
-  color: initial;
+[data-theme=minimal] > header .firstname {
+  font-weight: 200;
 }
-[data-theme=theme1] > header abbr, [data-theme=theme1] > header .t-h1, [data-theme=theme1] > header .t-h2, [data-theme=theme1] > header .t-h3, [data-theme=theme1] > header .t-h4 {
-  color: var(--primary-base);
-}
-[data-theme=theme1] > header abbr {
+[data-theme=minimal] > header abbr {
   text-decoration: none;
 }
-[data-theme=theme1] main {
-  background-color: var(--primary-light);
+[data-theme=minimal] main > header .t-h2 {
+  font-weight: 200;
 }
-[data-theme=theme1] main .t-h2 {
-  color: var(--tertiary-base);
+[data-theme=minimal] main section time {
+  line-height: 1;
+  font-weight: 200;
+  font-size: 0.75em;
 }
-[data-theme=theme1] main time {
-  color: var(--primary-base);
+[data-theme=minimal] aside .t-h2 {
+  font-weight: 200;
 }
-[data-theme=theme1] article ul li {
+[data-theme=minimal] article + article {
+  padding-top: calc(var(--whitespace) / 2);
+  border-top: 1px solid #EDEDED;
+}
+[data-theme=minimal] article ul li {
   display: inline;
-  font-weight: 100;
-}
-[data-theme=theme1] aside {
-  color: white;
-  background-color: var(--primary-base);
-}
-[data-theme=theme1] aside time, [data-theme=theme1] aside .t-h2 {
-  color: var(--tertiary-base);
-}
-[data-theme=theme1] aside time, [data-theme=theme1] aside abbr, [data-theme=theme1] aside .diploma {
-  font-weight: 800;
+  font-weight: 400;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -1,5 +1,10 @@
 @mixin grid-layout()
 {
+  time {
+    @extend .t-oblique;
+    display: block;
+  }
+
   body {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
@@ -11,40 +16,47 @@
 
   header {
     grid-area: header;
+    .firstname, abbr { margin-top: 0; }
+    .firstname { display: block; }
   }
 
   main {
     grid-area: main;
     display: grid;
     grid-template-columns: auto 1fr;
-    grid-template-areas: 'header sections';
-    background-color: pink;
+    grid-template-areas: 'sections header';
+    column-gap: f.p(whitespace);
 
     & > header {
-      grid-area: header;
+      grid-column: header;
       writing-mode: vertical-rl;
     }
 
     section {
-      grid-area: sections;
-      background-color: olive;
-    }
+      grid-column: sections;
 
-    //article { grid-area: sections; }
+      &:first-of-type { margin-top: 0; }
+    }
   }
 
   aside {
     grid-area: aside;
     display: grid;
     grid-template-columns: auto 1fr;
-    grid-template-areas: 'header section';
+    grid-template-areas: 'sections header';
+    column-gap: f.p(whitespace);
 
     header {
       grid-column: header;
       writing-mode: vertical-rl;
     }
 
-    section { grid-column: section; }
+    section {
+      grid-column: sections;
+
+      &:first-of-type { margin-top: 0; }
+    }
+
   }
 
   article {

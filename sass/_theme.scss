@@ -1,39 +1,17 @@
 @mixin theme() {
   [data-theme="minimal"] {
+    @extend .t-medium;
     background-color: #FAFAFA;
     color: #444;
+    line-height: 1.6;
     font: {
       family: ManropeGX, sans-serif;
       weight: 200;
     }
 
-    main, aside, & > header {
-      * + * {
-        margin-top: f.p(whitespace);
+    .t-h1, .t-h2, .t-h3, abbr { font-weight: 600; }
 
-        ul, li { margin-top: 0; }
-      }
-    }
-
-    .t-h1, .t-h2, .t-h3, .t-h4, .t-h5 {
-      font: {
-        family: ManropeGX, sans-serif;
-        weight: 600;
-      }
-    }
-  }
-
-  [data-theme="theme1"] {
-    color: f.p(primary-dark);
-    background-color: f.p(tertiary-base);
-    font-family: Quicksand;
-    line-height: 1.6;
-
-    .t-h1, .t-h2, .t-h3, .t-h4, .t-h5 {
-      font-family: Oswald;
-    }
-
-    .names { font-weight: 500; }
+    .t-h4, .t-h5 { font-weight: 350; }
 
     main, aside, & > header {
       * + * {
@@ -42,50 +20,44 @@
         ul, li { margin-top: 0; }
       }
     }
-
-    .t-h2 { text-transform: uppercase; }
 
     & > header {
-      background-color: f.p(tertiary-base);
-      .firstname {
-        color: initial;
-        display: block;
-        margin-top: 0;
-      }
       .t-h1 { line-height: 1; }
-      .t-h2 {
-        @extend .t-leading;
-        color: initial;
-      }
-      abbr, .t-h1, .t-h2, .t-h3, .t-h4 { color: f.p(primary-base); }
+      .firstname { font-weight: 200; }
       abbr { text-decoration: none; }
     }
 
     main {
-      background-color: f.p(primary-light);
-      .t-h2 { color: f.p(tertiary-base); }
-      time {
-        @extend .t-oblique, .t-small;
-        color: f.p(primary-base);
-      }
-    }
+      & > header .t-h2 { font-weight: 200; }
 
-    article {
-      p { @extend .t-justify; }
-      ul {
-        @extend .t-oblique, .t-small;
-        li {
-          display: inline;
-          font-weight: 100;
+      section {
+        time {
+          line-height: 1;
+          font: {
+            weight: 200;
+            size: .75em;
+          }
         }
       }
     }
 
     aside {
-      color: white;
-      background-color: f.p(primary-base);
-      time, .t-h2 { color: f.p(tertiary-base); }
-      time, abbr, .diploma { font-weight: 800; }
+      .t-h2 { font-weight: 200; }
+    }
+
+    article {
+      + article {
+        padding-top: calc(#{f.p(whitespace)} / 2);
+        border-top: 1px solid #EDEDED;
+      }
+      p { @extend .t-justify; }
+      ul {
+        @extend .t-oblique, .t-small, .t-right;
+        li {
+          display: inline;
+          font-weight: 400;
+        }
+      }
     }
   }
 }
