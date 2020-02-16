@@ -7,15 +7,25 @@
 
   body {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: auto 1fr;
+    grid-template-columns: 20vw 2fr 1fr;
     grid-template-areas: 'header main aside';
+    align-content: start;
   }
 
   body > header, main, aside { padding: f.p(whitespace); }
 
-  header {
+  body > header {
     grid-area: header;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .sticky {
+      position: fixed;
+      bottom: 25vh;
+      max-width: calc(20vw - calc(#{f.p(whitespace)} * 2));
+    }
     .firstname, abbr { margin-top: 0; }
     .firstname { display: block; }
   }
@@ -24,16 +34,16 @@
     grid-area: main;
     display: grid;
     grid-template-columns: auto 1fr;
-    grid-template-areas: 'sections header';
+    grid-template-areas: 'm-sections m-header';
     column-gap: f.p(whitespace);
 
     & > header {
-      grid-column: header;
+      grid-area: m-header;
       writing-mode: vertical-rl;
     }
 
     section {
-      grid-column: sections;
+      grid-column: m-sections;
 
       &:first-of-type { margin-top: 0; }
     }
@@ -41,22 +51,26 @@
 
   aside {
     grid-area: aside;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-areas: 'sections header';
-    column-gap: f.p(whitespace);
-
-    header {
-      grid-column: header;
-      writing-mode: vertical-rl;
-    }
 
     section {
-      grid-column: sections;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-template-areas: 's-description s-header';
+      column-gap: f.p(whitespace);
 
       &:first-of-type { margin-top: 0; }
-    }
 
+      & > header {
+        grid-column: s-header;
+        writing-mode: vertical-rl;
+      }
+
+      & > dl, & > ul {
+        grid-area: s-description;
+
+        &:first-of-type { margin-top: 0; }
+      }
+    }
   }
 
   article {

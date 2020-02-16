@@ -389,7 +389,7 @@ textarea {
   text-justify: distribute;
   hyphens: auto;
 }
-.t-italic, .t-oblique, [data-theme=minimal] article ul, time {
+.t-italic, .t-oblique, [data-theme=minimal] article ul, [data-theme=minimal] time, time {
   font-style: italic;
 }
 .t-ellipsis {
@@ -718,7 +718,7 @@ textarea {
   text-justify: distribute;
   hyphens: auto;
 }
-.t-italic, .t-oblique, [data-theme=minimal] article ul, time {
+.t-italic, .t-oblique, [data-theme=minimal] article ul, [data-theme=minimal] time, time {
   font-style: italic;
 }
 .t-ellipsis {
@@ -774,22 +774,32 @@ time {
 
 body {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: auto 1fr;
+  grid-template-columns: 20vw 2fr 1fr;
   grid-template-areas: "header main aside";
+  align-content: start;
 }
 
 body > header, main, aside {
   padding: var(--whitespace);
 }
 
-header {
+body > header {
   grid-area: header;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-header .firstname, header abbr {
+body > header .sticky {
+  position: fixed;
+  bottom: 25vh;
+  max-width: calc(20vw - calc(var(--whitespace) * 2));
+}
+body > header .firstname, body > header abbr {
   margin-top: 0;
 }
-header .firstname {
+body > header .firstname {
   display: block;
 }
 
@@ -797,15 +807,15 @@ main {
   grid-area: main;
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-template-areas: "sections header";
+  grid-template-areas: "m-sections m-header";
   column-gap: var(--whitespace);
 }
 main > header {
-  grid-column: header;
+  grid-area: m-header;
   writing-mode: vertical-rl;
 }
 main section {
-  grid-column: sections;
+  grid-column: m-sections;
 }
 main section:first-of-type {
   margin-top: 0;
@@ -813,19 +823,24 @@ main section:first-of-type {
 
 aside {
   grid-area: aside;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-areas: "sections header";
-  column-gap: var(--whitespace);
-}
-aside header {
-  grid-column: header;
-  writing-mode: vertical-rl;
 }
 aside section {
-  grid-column: sections;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: "s-description s-header";
+  column-gap: var(--whitespace);
 }
 aside section:first-of-type {
+  margin-top: 0;
+}
+aside section > header {
+  grid-column: s-header;
+  writing-mode: vertical-rl;
+}
+aside section > dl, aside section > ul {
+  grid-area: s-description;
+}
+aside section > dl:first-of-type, aside section > ul:first-of-type {
   margin-top: 0;
 }
 
@@ -847,7 +862,6 @@ article ul {
   src: url("../fonts/ManropeGX.ttf");
 }
 [data-theme=minimal] {
-  background-color: #FAFAFA;
   color: #444;
   line-height: 1.6;
   font-family: ManropeGX, sans-serif;
@@ -858,6 +872,17 @@ article ul {
 }
 [data-theme=minimal] .t-h4, [data-theme=minimal] .t-h5 {
   font-weight: 350;
+}
+[data-theme=minimal] .position {
+  margin-top: calc(var(--whitespace) / 2 );
+  font-weight: 700;
+}
+[data-theme=minimal] .diploma {
+  font-weight: 500;
+}
+[data-theme=minimal] time {
+  line-height: 1;
+  font-weight: 200;
 }
 [data-theme=minimal] main * + *, [data-theme=minimal] aside * + *, [data-theme=minimal] > header * + * {
   margin-top: var(--whitespace);
@@ -877,13 +902,29 @@ article ul {
 [data-theme=minimal] main > header .t-h2 {
   font-weight: 200;
 }
-[data-theme=minimal] main section time {
-  line-height: 1;
-  font-weight: 200;
-  font-size: 0.75em;
+[data-theme=minimal] section header .t-h3 {
+  margin-top: 0;
 }
 [data-theme=minimal] aside .t-h2 {
   font-weight: 200;
+}
+[data-theme=minimal] aside section dl li {
+  display: inline;
+}
+[data-theme=minimal] aside section dt {
+  font-weight: 500;
+}
+[data-theme=minimal] aside section dd {
+  margin-top: calc(var(--whitespace) / 2);
+}
+[data-theme=minimal] aside section + section {
+  padding-top: var(--whitespace);
+  border-top: 1px solid #EDEDED;
+}
+[data-theme=minimal] aside section + section li + li {
+  border-top: 1px solid #EDEDED;
+  margin-top: calc(var(--whitespace) / 2);
+  padding-top: calc(var(--whitespace) / 2);
 }
 [data-theme=minimal] article + article {
   padding-top: calc(var(--whitespace) / 2);

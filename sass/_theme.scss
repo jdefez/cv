@@ -1,7 +1,7 @@
 @mixin theme() {
   [data-theme="minimal"] {
     @extend .t-medium;
-    background-color: #FAFAFA;
+    //background-color: #FAFAFA;
     color: #444;
     line-height: 1.6;
     font: {
@@ -12,6 +12,22 @@
     .t-h1, .t-h2, .t-h3, abbr { font-weight: 600; }
 
     .t-h4, .t-h5 { font-weight: 350; }
+
+    .position {
+      margin-top: calc(#{f.p(whitespace)} / 2 );
+      font-weight: 700;
+    }
+
+    .diploma { font-weight: 500; }
+
+    time {
+      @extend .t-oblique;
+      line-height: 1;
+      font: {
+        weight: 200;
+        //size: .75em;
+      }
+    }
 
     main, aside, & > header {
       * + * {
@@ -30,19 +46,28 @@
     main {
       & > header .t-h2 { font-weight: 200; }
 
-      section {
-        time {
-          line-height: 1;
-          font: {
-            weight: 200;
-            size: .75em;
-          }
-        }
-      }
+    }
+
+    section {
+      header .t-h3 { margin-top: 0; }
     }
 
     aside {
       .t-h2 { font-weight: 200; }
+      section {
+        dl li { display: inline; }
+        dt { font-weight: 500; }
+        dd { margin-top: calc(#{f.p(whitespace)} / 2); }
+        & + section {
+          padding-top: f.p(whitespace);
+          border-top: 1px solid #EDEDED;
+          li + li {
+            border-top: 1px solid #EDEDED;
+            margin-top: calc(#{f.p(whitespace)} / 2);
+            padding-top: calc(#{f.p(whitespace)} / 2);
+          }
+        }
+      }
     }
 
     article {
