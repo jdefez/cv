@@ -9,41 +9,41 @@
     /// Colors are transpiled to custom properties named --color-variant,
     ///   ex. --primary-base
     primary : (
-      base  : #FF6C62,
-      dark  : #4E0500,
-      light : #FBF5E9,
+      base  : #00ccae,
+      //dark  : #4E0500,
+      //light : #FBF5E9,
     ),
-    secondary : (
-      base  : #6C62FF,
-      //dark  : #47b300,
-      //light : #94ff4d,
-    ),
-    tertiary: (
-      base: #F8D986,
-      //base: #ffbb62,
-    ),
-    accent : (
-      base  : #62FF6C,
-      //dark  : #ff0066,
-      //light : #ff4d94,
-    ),
+    // secondary : (
+    //   base  : #6C62FF,
+    //   dark  : #47b300,
+    //   light : #94ff4d,
+    // ),
+    // tertiary: (
+    //   base: #F8D986,
+    //   base: #ffbb62,
+    // ),
+    // accent : (
+    //   base  : #62FF6C,
+    //   dark  : #ff0066,
+    //   light : #ff4d94,
+    // ),
     text: (
       base: #002f76,
       light: #001f4e,
       dark: #140100,
     ),
-    'gray' : (
-      base   : #888888,
-      darker : #111111,
-      dark   : #333333,
-      light  : #eeeeee,
-    ),
-    notice : (
-      success : #1aaa55,
-      info    : #1f78d1,
-      warning : #fc9403,
-      danger  : #db3b21
-    ),
+    // 'gray' : (
+    //   base   : #888888,
+    //   darker : #111111,
+    //   dark   : #333333,
+    //   light  : #eeeeee,
+    // ),
+    // notice : (
+    //   success : #1aaa55,
+    //   info    : #1f78d1,
+    //   warning : #fc9403,
+    //   danger  : #db3b21
+    // ),
   ),
   $font-sizes: (
     h1      : 1.8em,
@@ -58,7 +58,9 @@
     xsmall  : 0.6rem,
   ),
   $vars : (
+    double-whitespace   : 3.2rem,
     whitespace          : 1.6rem,
+    half-whitespace     : 0.8rem,
     field-height        : 2.5rem,
     field-border-width  : 1px,
     field-border-radius : 0.2rem,
@@ -96,11 +98,13 @@ html, body {
 
 @include grid-layout;
 
-//@import url('https://fonts.googleapis.com/css2?family=Quicksand:ital,wght@0,300..700;1,300..700&display=swap');
-//@import url('https://fonts.googleapis.com/css2?family=Oswald:ital,wght@0,200..700;1,200..700&display=swap');
 @font-face {
   font-family: 'ManropeGX';
   src: url('../fonts/ManropeGX.ttf');
+}
+@font-face {
+  font-family: 'Estedad';
+  src: url('../fonts/Estedad-VF.ttf');
 }
 @include theme;
 

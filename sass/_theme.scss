@@ -1,88 +1,114 @@
-@mixin theme() {
-  [data-theme="minimal"] {
+@mixin theme()
+{
+  body {
     @extend .t-medium;
-    //background-color: #FAFAFA;
     color: #444;
     line-height: 1.6;
     font: {
-      family: ManropeGX, sans-serif;
+      family: Estedad, sans-serif;
       weight: 200;
     }
+  }
+  .t-h1, .t-h2, .t-h3, .t-h4, .t-h5 { font-family: ManropeGX, sans-serif; }
 
-    .t-h1, .t-h2, .t-h3, abbr { font-weight: 600; }
+  .t-h1, .t-h2, .t-h3, abbr { font-weight: 600; }
 
-    .t-h4, .t-h5 { font-weight: 350; }
+  .t-h4, .t-h5 { font-weight: 350; }
 
-    .position {
-      margin-top: calc(#{f.p(whitespace)} / 2 );
-      font-weight: 700;
+  .firstname { color: f.p(primary-base); }
+  .position {
+    margin-top: f.p(half-whitespace);
+    font-weight: 700;
+  }
+
+  .diploma { font-weight: 500; }
+
+  time {
+    @extend .t-oblique, .t-medium;
+    line-height: 1;
+    font-weight: 200;
+  }
+
+  main, aside, body > header {
+    * + * {
+      margin-top: f.p(whitespace);
+
+      ul, li { margin-top: 0; }
     }
+  }
 
-    .diploma { font-weight: 500; }
-
-    time {
-      @extend .t-oblique;
-      line-height: 1;
-      font: {
-        weight: 200;
-        //size: .75em;
-      }
+  body > header {
+    .t-h1 { line-height: 1; }
+    .firstname { font-weight: 200; }
+    address {
+      padding-top: f.p(half-whitespace);
+      border-top: 1px solid #EDEDED;
     }
+    abbr { text-decoration: none; }
+  }
 
-    main, aside, & > header {
-      * + * {
-        margin-top: f.p(whitespace);
-
-        ul, li { margin-top: 0; }
-      }
+  main {
+    & > header .t-h2 {
+      font-weight: 200;
+      letter-spacing: 0.081em;
     }
+  }
 
-    & > header {
-      .t-h1 { line-height: 1; }
-      .firstname { font-weight: 200; }
-      abbr { text-decoration: none; }
+  section {
+    header .t-h3 { margin-top: 0; }
+  }
+
+  aside {
+    .t-h2 {
+      font-weight: 200;
+      letter-spacing: 0.081em;
     }
-
-    main {
-      & > header .t-h2 { font-weight: 200; }
-
-    }
-
     section {
-      header .t-h3 { margin-top: 0; }
-    }
-
-    aside {
-      .t-h2 { font-weight: 200; }
-      section {
-        dl li { display: inline; }
-        dt { font-weight: 500; }
-        dd { margin-top: calc(#{f.p(whitespace)} / 2); }
-        & + section {
-          padding-top: f.p(whitespace);
-          border-top: 1px solid #EDEDED;
-          li + li {
+      dl li { display: inline; }
+      dt { font-weight: 500; }
+      dd { margin-top: f.p(half-whitespace); }
+      & + section {
+        padding-top: f.p(whitespace);
+        border-top: 1px solid #EDEDED;
+        li {
+          + li {
             border-top: 1px solid #EDEDED;
-            margin-top: calc(#{f.p(whitespace)} / 2);
-            padding-top: calc(#{f.p(whitespace)} / 2);
+            margin-top: f.p(half-whitespace);
+            padding-top: f.p(half-whitespace);
           }
         }
       }
     }
+  }
 
-    article {
-      + article {
-        padding-top: calc(#{f.p(whitespace)} / 2);
-        border-top: 1px solid #EDEDED;
-      }
-      p { @extend .t-justify; }
-      ul {
-        @extend .t-oblique, .t-small, .t-right;
-        li {
-          display: inline;
-          font-weight: 400;
-        }
+  article {
+    padding-top: f.p(half-whitespace);
+    border-top: 1px solid #EDEDED;
+    p { @extend .t-justify; }
+    ul {
+      @extend .t-oblique, .t-small, .t-right;
+      li {
+        color: f.p(primary-base);
+        display: inline;
+        font-weight: 400;
+        letter-spacing: 0.098em;
       }
     }
+  }
+
+  @include f.breakpoint(md) {
+    body > header address {
+      border-top-width: 0;
+      padding-top: 0;
+    }
+    main, aside { border-top: 1px solid #EDEDED; }
+  }
+
+  @include f.breakpoint(sm) {
+    body > header address {
+      border-top-width: 0;
+      padding-top: 0;
+    }
+    main, aside { border-top: 1px solid #EDEDED; }
   }
 }
