@@ -115,8 +115,12 @@
     }
   }
 
-  // Todo: iphone
-  // @include f.breakpoint(sm) {
-  //   body { }
-  // }
+  @include f.breakpoint(sm) {
+    body {
+      & > header {
+        text-align: center;
+        .sticky { display: block; }
+      }
+    }
+  }
 }
