@@ -27,6 +27,7 @@
     @extend .t-oblique, .t-medium;
     line-height: 1;
     font-weight: 200;
+    color: silver;
   }
 
   main, aside, body > header {
@@ -34,24 +35,31 @@
       margin-top: f.p(whitespace);
 
       ul, li { margin-top: 0; }
+
+      li { @extend .t-medium; }
     }
   }
 
   body > header {
     .t-h1 { line-height: 1; }
-    .firstname { font-weight: 200; }
+    .firstname {
+      @extend .t-medium;
+      font-weight: 200;
+    }
     address {
+      @extend .t-small;
       padding-top: f.p(half-whitespace);
       border-top: 1px solid #EDEDED;
     }
     abbr { text-decoration: none; }
   }
 
-  main {
-    & > header .t-h2 {
-      font-weight: 200;
-      letter-spacing: 0.081em;
-    }
+  // sections header
+  main > header .t-h2,
+  aside .t-h2 {
+    font-weight: 200;
+    letter-spacing: 0.081em;
+    color: silver;
   }
 
   section {
@@ -59,14 +67,10 @@
   }
 
   aside {
-    .t-h2 {
-      font-weight: 200;
-      letter-spacing: 0.081em;
-    }
     section {
       dl li { display: inline; }
       dt { font-weight: 500; }
-      dd { margin-top: f.p(half-whitespace); }
+      dd, dt { margin-top: f.p(half-whitespace); }
       & + section {
         padding-top: f.p(whitespace);
         border-top: 1px solid #EDEDED;
@@ -84,6 +88,9 @@
   article {
     padding-top: f.p(half-whitespace);
     border-top: 1px solid #EDEDED;
+    p, ul {
+      @extend .t-medium;
+    }
     p { @extend .t-justify; }
     ul {
       @extend .t-oblique, .t-small, .t-right;
