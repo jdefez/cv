@@ -880,6 +880,14 @@ article ul {
     display: inline;
   }
 }
+@media screen and (max-width: 576px) {
+  body > header {
+    text-align: center;
+  }
+  body > header .sticky {
+    display: block;
+  }
+}
 @font-face {
   font-family: "ManropeGX";
   src: url("../fonts/ManropeGX.ttf");
