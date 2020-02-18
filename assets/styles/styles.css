@@ -318,10 +318,10 @@ textarea {
 .t-copy {
   font-size: 1em;
 }
-.t-medium, time, body {
+.t-medium, article p, article ul, body > header .firstname, main * + * li, aside * + * li, body > header * + * li, time, body {
   font-size: 0.9em;
 }
-.t-small, article ul {
+.t-small, article ul, body > header address {
   font-size: 0.8em;
 }
 .t-xsmall {
@@ -785,7 +785,7 @@ body > header section {
 }
 body > header .sticky {
   position: fixed;
-  bottom: 25vh;
+  bottom: 6vh;
   max-width: calc(20vw - var(--double-whitespace));
 }
 body > header .firstname, body > header abbr {
@@ -829,10 +829,11 @@ aside section > header {
   grid-column: s-header;
   writing-mode: vertical-rl;
 }
-aside section > dl, aside section > ul {
-  grid-area: s-description;
+aside section dl dt:first-of-type {
+  margin-top: 0;
 }
-aside section > dl:first-of-type, aside section > ul:first-of-type {
+aside section dl, aside section ul {
+  grid-area: s-description;
   margin-top: 0;
 }
 
@@ -931,6 +932,7 @@ body {
 time {
   line-height: 1;
   font-weight: 200;
+  color: silver;
 }
 
 main * + *, aside * + *, body > header * + * {
@@ -939,7 +941,6 @@ main * + *, aside * + *, body > header * + * {
 main * + * ul, main * + * li, aside * + * ul, aside * + * li, body > header * + * ul, body > header * + * li {
   margin-top: 0;
 }
-
 body > header .t-h1 {
   line-height: 1;
 }
@@ -954,26 +955,24 @@ body > header abbr {
   text-decoration: none;
 }
 
-main > header .t-h2 {
+main > header .t-h2,
+aside .t-h2 {
   font-weight: 200;
   letter-spacing: 0.081em;
+  color: silver;
 }
 
 section header .t-h3 {
   margin-top: 0;
 }
 
-aside .t-h2 {
-  font-weight: 200;
-  letter-spacing: 0.081em;
-}
 aside section dl li {
   display: inline;
 }
 aside section dt {
   font-weight: 500;
 }
-aside section dd {
+aside section dd, aside section dt {
   margin-top: var(--half-whitespace);
 }
 aside section + section {
