@@ -66,10 +66,12 @@
         writing-mode: vertical-rl;
       }
 
-      & > dl, & > ul {
-        grid-area: s-description;
 
-        &:first-of-type { margin-top: 0; }
+      dl dt:first-of-type { margin-top: 0; }
+
+      dl, ul {
+        grid-area: s-description;
+        margin-top: 0;
       }
     }
   }
