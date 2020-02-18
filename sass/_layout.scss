@@ -24,7 +24,7 @@
     section { margin-top: 0; }
     .sticky {
       position: fixed;
-      bottom: 25vh;
+      bottom: 6vh;
       max-width: calc(20vw - #{f.p(double-whitespace)});
     }
     .firstname, abbr { margin-top: 0; }
