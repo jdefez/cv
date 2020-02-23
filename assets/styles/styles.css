@@ -893,6 +893,98 @@ article ul {
     display: block;
   }
 }
+.switch {
+  --switch-width: 35px;
+  --switch-height: 20px;
+  --switch-knob-width: 20px;
+  --switch-border-width: 2px;
+  --switch-knob-color: #FFF;
+  --switch-knob-border-color: #00ccae;
+  --switch-checked-color: #00ccae;
+  --switch-background-color: #DDDDDD;
+  display: inline-block;
+  margin-top: 0;
+  padding: 0;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.switch__element {
+  display: inline-flex;
+  position: relative;
+  box-sizing: border-box;
+  width: var(--switch-width);
+  height: var(--switch-height);
+  padding: 0;
+  z-index: 1;
+  overflow-x: hidden;
+  border-width: var(--switch-border-width);
+  border-style: solid;
+  border-color: var(--switch-background-color);
+  border-radius: calc(calc(var(--switch-height) / 2));
+  line-height: 1;
+  vertical-align: middle;
+}
+.switch__element:before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  width: calc(var(--switch-knob-width) - var(--switch-border-width));
+  height: calc(var(--switch-height) - var(--switch-border-width));
+  position: absolute;
+  top: calc(calc(var(--switch-border-width) / 2) * -1);
+  left: 0;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--switch-knob-border-color);
+  border-radius: calc(var(--switch-width) / 2);
+  background-color: var(--switch-knob-color);
+  z-index: 2;
+}
+.switch__label {
+  margin-top: 0;
+  color: var(--switch-text-color);
+}
+.switch [type=radio],
+.switch [type=checkbox] {
+  display: none;
+}
+.switch [type=radio] ~ .switch__element,
+.switch [type=checkbox] ~ .switch__element {
+  margin-top: 0;
+  background-color: var(--switch-background-color);
+}
+.switch [type=radio] ~ .switch__element:before,
+.switch [type=checkbox] ~ .switch__element:before {
+  transform-origin: top left;
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+  border-color: var(--switch-background-color);
+}
+.switch [type=radio]:checked ~ .switch__element,
+.switch [type=checkbox]:checked ~ .switch__element {
+  border-color: var(--switch-checked-color);
+  background-color: var(--switch-checked-color);
+}
+.switch [type=radio]:checked ~ .switch__element:before,
+.switch [type=checkbox]:checked ~ .switch__element:before {
+  transform: translate(calc(var(--switch-width) - var(--switch-knob-width)));
+  border-color: var(--switch-checked-color);
+}
+.switch [type=radio]:not(:checked) ~ .switch__element,
+.switch [type=checkbox]:not(:checked) ~ .switch__element {
+  background-color: var(--switch-background-color);
+}
+.switch [type=radio]:not(:checked) ~ .switch__element:before,
+.switch [type=checkbox]:not(:checked) ~ .switch__element:before {
+  transform: translateX(0);
+}
+.switch [type=radio]:disabled ~ .switch__label_before,
+.switch [type=checkbox]:disabled ~ .switch__label_before {
+  cursor: default;
+}
+
 @font-face {
   font-family: "ManropeGX";
   src: url("../fonts/ManropeGX.ttf");

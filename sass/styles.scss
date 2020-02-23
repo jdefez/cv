@@ -70,6 +70,7 @@
   $min-size: 12, $min-width: 400,
   $max-size: 16, $max-width: 800
 );
+@import 'switch';
 @import 'layout';
 @import 'theme';
 
@@ -93,6 +94,7 @@ html, body {
 }
 
 @include grid-layout;
+@include switch;
 
 @font-face {
   font-family: 'ManropeGX';
