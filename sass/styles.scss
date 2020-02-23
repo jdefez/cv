@@ -13,24 +13,20 @@
       //dark  : #4E0500,
       //light : #FBF5E9,
     ),
-    // secondary : (
-    //   base  : #6C62FF,
-    //   dark  : #47b300,
-    //   light : #94ff4d,
-    // ),
-    // tertiary: (
-    //   base: #F8D986,
-    //   base: #ffbb62,
-    // ),
-    // accent : (
-    //   base  : #62FF6C,
-    //   dark  : #ff0066,
-    //   light : #ff4d94,
-    // ),
     text: (
-      base: #002f76,
-      light: #001f4e,
-      dark: #140100,
+      base: #444444,
+      light: #555555,
+      dark: #AAAAAA,
+    ),
+    background: (
+      //base: transparent,
+      light: #FFFFFF,
+      dark: #333333,
+    ),
+    border: (
+      //base: transparent,
+      light: #EDEDED,
+      dark: #444444,
     ),
     // 'gray' : (
     //   base   : #888888,

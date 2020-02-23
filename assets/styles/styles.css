@@ -201,9 +201,13 @@ textarea {
   --btn-border-width: 1px;
   --btn-border-radius: 0.3rem;
   --primary-base: #00ccae;
-  --text-base: #002f76;
-  --text-light: #001f4e;
-  --text-dark: #140100;
+  --text-base: #444444;
+  --text-light: #555555;
+  --text-dark: #AAAAAA;
+  --background-light: #FFFFFF;
+  --background-dark: #333333;
+  --border-light: #EDEDED;
+  --border-dark: #444444;
 }
 
 *,
@@ -898,7 +902,7 @@ article ul {
   src: url("../fonts/Estedad-VF.ttf");
 }
 body {
-  color: #444;
+  color: var(--text-base);
   line-height: 1.6;
   font-family: Estedad, sans-serif;
   font-weight: 200;
@@ -932,7 +936,7 @@ body {
 time {
   line-height: 1;
   font-weight: 200;
-  color: silver;
+  color: var(--text-light);
 }
 
 main * + *, aside * + *, body > header * + * {
@@ -949,7 +953,7 @@ body > header .firstname {
 }
 body > header address {
   padding-top: var(--half-whitespace);
-  border-top: 1px solid #EDEDED;
+  border-top: 1px solid var(--border-light);
 }
 body > header abbr {
   text-decoration: none;
@@ -959,7 +963,7 @@ main > header .t-h2,
 aside .t-h2 {
   font-weight: 200;
   letter-spacing: 0.081em;
-  color: silver;
+  color: var(--text-light);
 }
 
 section header .t-h3 {
@@ -977,25 +981,50 @@ aside section dd, aside section dt {
 }
 aside section + section {
   padding-top: var(--whitespace);
-  border-top: 1px solid #EDEDED;
+  border-top: 1px solid var(--border-light);
 }
 aside section + section li + li {
-  border-top: 1px solid #EDEDED;
+  border-top: 1px solid var(--border-light);
   margin-top: var(--half-whitespace);
   padding-top: var(--half-whitespace);
 }
 
 article {
   padding-top: var(--half-whitespace);
-  border-top: 1px solid #EDEDED;
+  border-top: 1px solid var(--border-light);
 }
 article ul li {
   color: var(--primary-base);
   display: inline;
   font-weight: 400;
-  letter-spacing: 0.098em;
+  letter-spacing: 0.061em;
 }
 
+@media (prefers-color-scheme: dark) {
+  body {
+    background-attachment: fixed;
+    background-color: var(--background-dark);
+    background-image: radial-gradient(at bottom left, #111111 0%, #222222 12.5%, #252525 25%, #333333 50%, #333333 100%);
+    color: var(--text-dark);
+  }
+  body header .t-h1 {
+    color: #EEEEEE;
+  }
+  body header address {
+    border-top: 1px solid var(--border-dark);
+  }
+
+  aside section + section {
+    border-top: 1px solid var(--border-dark);
+  }
+  aside section + section li + li {
+    border-top: 1px solid var(--border-dark);
+  }
+
+  article {
+    border-top: 1px solid var(--border-dark);
+  }
+}
 @media screen and (min-width: 577px) and (max-width: 768px) {
   body > header address {
     border-top-width: 0;
@@ -1003,7 +1032,7 @@ article ul li {
   }
 
   main, aside {
-    border-top: 1px solid #EDEDED;
+    border-top: 1px solid var(--border-light);
   }
 }
 @media screen and (max-width: 576px) {
@@ -1013,7 +1042,7 @@ article ul li {
   }
 
   main, aside {
-    border-top: 1px solid #EDEDED;
+    border-top: 1px solid var(--border-light);
   }
 }
 
