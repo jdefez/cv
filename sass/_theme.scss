@@ -1,5 +1,28 @@
 @mixin theme()
 {
+  [data-theme="dark"] {
+    --background-base: #333333;
+    --text-base: #AAAAAA;
+    --border-base: #444444;
+  }
+
+  @media screen and (prefers-color-scheme: dark) {
+    body {
+      --background-base: #333333;
+      --text-base: #AAAAAA;
+      --border-base: #444444;
+
+    }
+    .switch { display: none; }
+  }
+  @media screen and (prefers-color-scheme: light) {
+    body {
+      --background-base: #FFFFFF;
+      --text-base: #444444;
+      --border-base: #EDEDED;
+    }
+  }
+
   body {
     @extend .t-medium;
     color: f.p(text-base);
@@ -8,20 +31,30 @@
       family: Estedad, sans-serif;
       weight: 200;
     }
-  }
-  .t-h1, .t-h2, .t-h3, .t-h4, .t-h5 { font-family: ManropeGX, sans-serif; }
+    background-color: f.p(background-base);
 
-  .t-h1, .t-h2, .t-h3, abbr { font-weight: 600; }
-
-  .t-h4, .t-h5 { font-weight: 350; }
-
-  .firstname { color: f.p(primary-base); }
-  .position {
-    margin-top: f.p(half-whitespace);
-    font-weight: 700;
+    & > header {
+      .t-h1 {
+        line-height: 1;
+        color: f.p(primary-base);
+      }
+      .firstname {
+        @extend .t-medium;
+        font-weight: 200;
+        color: f.p(text-base);
+      }
+      .position { line-height: 1; }
+      address {
+        @extend .t-small;
+        padding-top: f.p(half-whitespace);
+        border-top: 1px solid f.p(border-base);
+      }
+      abbr { text-decoration: none; }
+    }
   }
 
   .diploma { font-weight: 500; }
+
 
   time {
     @extend .t-oblique, .t-medium;
@@ -40,21 +73,6 @@
     }
   }
 
-  body > header {
-    .t-h1 { line-height: 1; }
-    .firstname {
-      @extend .t-medium;
-      font-weight: 200;
-    }
-    address {
-      @extend .t-small;
-      padding-top: f.p(half-whitespace);
-      border-top: 1px solid f.p(border-light);
-    }
-    abbr { text-decoration: none; }
-  }
-
-  // sections header
   main > header .t-h2,
   aside .t-h2 {
     font-weight: 200;
@@ -73,10 +91,10 @@
       dd, dt { margin-top: f.p(half-whitespace); }
       & + section {
         padding-top: f.p(whitespace);
-        border-top: 1px solid f.p(border-light);
+        border-top: 1px solid f.p(border-base);
         li {
           + li {
-            border-top: 1px solid f.p(border-light);
+            border-top: 1px solid f.p(border-base);
             margin-top: f.p(half-whitespace);
             padding-top: f.p(half-whitespace);
           }
@@ -87,7 +105,7 @@
 
   article {
     padding-top: f.p(half-whitespace);
-    border-top: 1px solid f.p(border-light);
+    border-top: 1px solid f.p(border-base);
     p, ul {
       @extend .t-medium;
     }
@@ -103,46 +121,12 @@
     }
   }
 
-  @media (prefers-color-scheme: dark) {
-    body {
-      background: {
-        attachment: fixed;
-        color: f.p(background-dark);
-        image: radial-gradient(at bottom left,
-          rgba(17,17,17,1) 0%,
-          rgba(34,34,34,1) 12.5%,
-          rgba(37,37,37,1) 25%,
-          rgba(51,51,51,1) 50%,
-          rgba(51,51,51,1) 100%
-        );
-      }
-      color: f.p(text-dark);
-      header {
-        .t-h1 { color: #EEEEEE; }
-        address { border-top: 1px solid f.p(border-dark); }
-      }
-    }
-
-    aside {
-      section {
-        & + section {
-          border-top: 1px solid f.p(border-dark);
-          li {
-            + li { border-top: 1px solid f.p(border-dark); }
-          }
-        }
-      }
-    }
-
-    article { border-top: 1px solid f.p(border-dark); }
-  }
-
   @include f.breakpoint(md) {
     body > header address {
       border-top-width: 0;
       padding-top: 0;
     }
-    main, aside { border-top: 1px solid f.p(border-light); }
+    main, aside { border-top: 1px solid f.p(border-base); }
   }
 
   @include f.breakpoint(sm) {
@@ -150,6 +134,6 @@
       border-top-width: 0;
       padding-top: 0;
     }
-    main, aside { border-top: 1px solid f.p(border-light); }
+    main, aside { border-top: 1px solid f.p(border-base); }
   }
 }

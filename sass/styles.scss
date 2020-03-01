@@ -10,36 +10,22 @@
     ///   ex. --primary-base
     primary : (
       base  : #00ccae,
-      //dark  : #4E0500,
-      //light : #FBF5E9,
     ),
     text: (
       base: #444444,
-      light: #555555,
+      light: #999999,
       dark: #AAAAAA,
     ),
     background: (
-      //base: transparent,
+      base: #FFFFFF,
       light: #FFFFFF,
       dark: #333333,
     ),
     border: (
-      //base: transparent,
+      base: #EDEDED,
       light: #EDEDED,
       dark: #444444,
     ),
-    // 'gray' : (
-    //   base   : #888888,
-    //   darker : #111111,
-    //   dark   : #333333,
-    //   light  : #eeeeee,
-    // ),
-    // notice : (
-    //   success : #1aaa55,
-    //   info    : #1f78d1,
-    //   warning : #fc9403,
-    //   danger  : #db3b21
-    // ),
   ),
   $font-sizes: (
     h1      : 1.8em,
@@ -104,5 +90,5 @@ html, body {
   font-family: 'Estedad';
   src: url('../fonts/Estedad-VF.ttf');
 }
-@include theme;
 
+@include theme;
