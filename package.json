@@ -13,7 +13,7 @@
     "sass:watch": "sass sass:assets/styles --watch --load-path=node_modules",
     "sass:compile": "sass sass:assets/styles --style=compressed --no-source-map --load-path=node_modules",
     "css:prefix": "postcss --use autoprefixer -b 'last 5 versions' assets/styles/*.css -r",
-    "css:build": "npm-run sass:compile css:prefix"
+    "css:build": "npm-run-all -l sass:compile css:prefix"
   },
   "author": "",
   "license": "ISC",
