@@ -1,0 +1,128 @@
+@mixin grid-layout()
+{
+  time {
+    @extend .t-oblique;
+    display: block;
+  }
+
+  body {
+    display: grid;
+    grid-template-columns: 20vw 2fr 1fr;
+    grid-template-areas: 'header main aside';
+    align-content: start;
+  }
+
+  body > header, main, aside { padding: f.p(whitespace); }
+
+  body > header {
+    grid-area: header;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    section { margin-top: 0; }
+    .sticky {
+      position: fixed;
+      bottom: 6vh;
+      max-width: calc(20vw - #{f.p(double-whitespace)});
+    }
+    .firstname, abbr { margin-top: 0; }
+    .firstname { display: block; }
+  }
+
+  main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: 'm-sections m-header';
+    column-gap: f.p(whitespace);
+
+    & > header {
+      grid-area: m-header;
+      writing-mode: vertical-rl;
+    }
+
+    section {
+      grid-column: m-sections;
+
+      &:first-of-type { margin-top: 0; }
+    }
+  }
+
+  aside {
+    grid-area: aside;
+
+    section {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-template-areas: 's-description s-header';
+      column-gap: f.p(whitespace);
+
+      &:first-of-type { margin-top: 0; }
+
+      & > header {
+        grid-column: s-header;
+        writing-mode: vertical-rl;
+      }
+
+
+      dl dt:first-of-type { margin-top: 0; }
+
+      dl, ul {
+        grid-area: s-description;
+        margin-top: 0;
+      }
+    }
+  }
+
+  article {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: 'description tags';
+    grid-column-gap: f.p(double-whitespace);
+
+    p { grid-area: description; }
+
+    ul { grid-area: tags; }
+  }
+
+  @include f.breakpoint(sm) {
+    body {
+      display: block;
+      & > header {
+        display: block;
+        height: auto;
+        grid-area: none;
+        .sticky {
+          position: static;
+          width: 100%;
+          max-width: none;
+
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-areas: 'heading address';
+          grid-column-gap: f.p(double-whitespace);
+          height: auto;
+        }
+
+        section { grid-area: heading; }
+        address {
+          grid-column: address;
+          margin-top: 0;
+          padding-top: 0;
+        }
+        .firstname { display: inline; }
+      }
+    }
+  }
+
+  @include f.breakpoint(sm) {
+    body {
+      & > header {
+        text-align: center;
+        .sticky { display: block; }
+      }
+    }
+  }
+}

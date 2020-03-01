@@ -1,0 +1,156 @@
+////
+// <label class="switch">
+//   <input type="checkbox">
+//   <span class="switch__label switch__label_before">
+//     label 1
+//   </span>
+//   <span class="switch__element"></span>
+//   <span class="switch__label switch__label_after">
+//     label 2
+//   </span>
+// </label>
+////
+
+@mixin switch()
+{
+  .switch {
+
+    --switch-width : 35px;
+    --switch-height : 20px;
+    --switch-knob-width : 20px;
+    // --switch-knob-height : 20px;
+    --switch-border-width : 2px;
+    --switch-knob-color: #FFF;
+    --switch-knob-border-color: #00ccae;
+    --switch-checked-color: #00ccae;
+    --switch-background-color: #DDDDDD;
+
+    display: inline-block;
+
+    margin-top: 0;
+    padding: 0;
+
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+
+    &__element {
+      display: inline-flex;
+      position: relative;
+      box-sizing: border-box;
+
+      width: var(--switch-width);
+      height: var(--switch-height);
+      padding: 0;
+      z-index: 1;
+
+      overflow-x: hidden;
+      border: {
+        width: var(--switch-border-width);
+        style: solid;
+        color: var(--switch-background-color);
+        radius: calc(calc(var(--switch-height) / 2));
+      }
+      line-height: 1;
+      vertical-align: middle;
+
+      &:before {
+        // Swith knob
+        content: '';
+
+        display: block;
+        box-sizing: border-box;
+        width: calc(var(--switch-knob-width) - var(--switch-border-width));
+        height: calc(var(--switch-height) - var(--switch-border-width));
+
+        position: absolute;
+        top: calc(calc(var(--switch-border-width) / 2) * -1);
+        left: 0;
+
+        border: {
+          width: 1px;
+          style: solid;
+          color: var(--switch-knob-border-color);
+          radius: calc(var(--switch-width) / 2);
+        }
+        background-color: var(--switch-knob-color);
+        //box-shadow: 0 0 3px 3px hsla(1, 0%, 0%, .125);
+
+        z-index: 2;
+      }
+    }
+
+    &__label {
+      margin-top: 0;
+      color: var(--switch-text-color);
+      // line-height: $fields-height;
+
+      //&_before { margin-right: $whitespace / 2; }
+      //&_after { margin-left: $whitespace / 2; }
+    }
+
+    [type="radio"],
+    [type="checkbox"] {
+      display: none;
+
+      & ~ .switch__element {
+        margin-top: 0;
+        background-color: var(--switch-background-color);
+
+        &:before {
+          transform-origin: top left;
+          transition: {
+            property: all;
+            duration: .2s;
+            timing-function: ease;
+          };
+          border-color: var(--switch-background-color);
+        }
+      }
+
+      &:checked {
+        & ~ .switch__element {
+          border: { color: var(--switch-checked-color); }
+          background-color: var(--switch-checked-color);
+
+          &:before {
+            transform: translate(
+              calc(var(--switch-width) - var(--switch-knob-width))
+            );
+            border: { color: var(--switch-checked-color); }
+          }
+        }
+
+        //& ~ .switch__label.switch__label_before { color: $medium-gray; }
+        //& ~ .switch__label.switch__label_after { color: $text-color; }
+      }
+
+      &:not(:checked) {
+        & ~ .switch__element {
+          background-color: var(--switch-background-color);
+
+          &:before { transform: translateX(0); }
+        }
+
+        //& ~ .switch__label.switch__label_before { color: $text-color; }
+        //& ~ .switch__label.switch__label_after { color: $medium-gray; }
+      }
+
+      &:disabled {
+        & ~ .switch__label {
+          &_before {
+            //color: #DDD;
+            cursor: default;
+          }
+        }
+
+        // & ~ .switch__element {
+          //background-color: lightgray;
+          //border-color: lightgray;
+        // }
+      }
+    }
+
+    @content;
+  }
+}

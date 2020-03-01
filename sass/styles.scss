@@ -1,0 +1,94 @@
+@use 'sass-repository/framework' as f with (
+  $breakpoints: (
+    sm :  576px,
+    md :  768px,
+    lg :  992px,
+    xl : 1200px,
+  ),
+  $colors : (
+    /// Colors are transpiled to custom properties named --color-variant,
+    ///   ex. --primary-base
+    primary : (
+      base  : #00ccae,
+    ),
+    text: (
+      base: #444444,
+      light: #999999,
+      dark: #AAAAAA,
+    ),
+    background: (
+      base: #FFFFFF,
+      light: #FFFFFF,
+      dark: #333333,
+    ),
+    border: (
+      base: #EDEDED,
+      light: #EDEDED,
+      dark: #444444,
+    ),
+  ),
+  $font-sizes: (
+    h1      : 1.8em,
+    h2      : 1.6em,
+    h3      : 1.4em,
+    h4      : 1.2em,
+    h5      : 1.1em,
+    leading : 1.1em,
+    copy    : 1em,
+    medium  : 0.9em,
+    small   : 0.8em,
+    xsmall  : 0.6rem,
+  ),
+  $vars : (
+    double-whitespace   : 3.2rem,
+    whitespace          : 1.6rem,
+    half-whitespace     : 0.8rem,
+    field-height        : 2.5rem,
+    field-border-width  : 1px,
+    field-border-radius : 0.2rem,
+    btn-border-width    : 1px,
+    btn-border-radius   : 0.3rem,
+));
+
+@include f.init;
+@include f.text;
+@include f.responsive-font-size(
+  $min-size: 12, $min-width: 400,
+  $max-size: 16, $max-width: 800
+);
+@import 'switch';
+@import 'layout';
+@import 'theme';
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.whitespaced {
+  * + * { margin-top: f.p(whitespace); }
+
+  &-exclude {
+    margin-top: 0;
+
+    &-all {
+      * + * { margin-top: 0; }
+    }
+  }
+}
+
+@include grid-layout;
+@include switch;
+
+@font-face {
+  font-family: 'ManropeGX';
+  src: url('../fonts/ManropeGX.ttf');
+}
+@font-face {
+  font-family: 'Estedad';
+  src: url('../fonts/Estedad-VF.ttf');
+}
+
+@include theme;
