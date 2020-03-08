@@ -94,16 +94,11 @@
         display: block;
         height: auto;
         grid-area: none;
+        text-align: center;
         .sticky {
           position: static;
           width: 100%;
-          max-width: none;
-
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          grid-template-areas: 'heading address';
-          grid-column-gap: f.p(double-whitespace);
-          height: auto;
+          max-width: 100%;
         }
 
         section { grid-area: heading; }
@@ -115,13 +110,28 @@
         .firstname { display: inline; }
       }
     }
+
+    article { display: block; }
   }
 
-  @include f.breakpoint(sm) {
+  @include f.breakpoint(md) {
     body {
+      display: block;
       & > header {
-        text-align: center;
-        .sticky { display: block; }
+        display: block;
+        grid-area: none;
+        height: auto;
+        .sticky { 
+          position: static;
+          width: 100%;
+          max-width: none;
+          height: auto;
+          display: grid;
+          align-items: center;
+          grid-template-columns: 1fr 1fr;
+          grid-template-areas: 'heading address';
+          grid-column-gap: f.p(double-whitespace);
+        }
       }
     }
   }

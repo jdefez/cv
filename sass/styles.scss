@@ -53,8 +53,8 @@
 @include f.init;
 @include f.text;
 @include f.responsive-font-size(
-  $min-size: 12, $min-width: 400,
-  $max-size: 16, $max-width: 800
+  $min-size: 16, $min-width: 400,
+  $max-size: 14, $max-width: 800
 );
 @import 'switch';
 @import 'layout';
